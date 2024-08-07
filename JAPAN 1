@@ -1,0 +1,52 @@
+-- Ensure Game is Loaded and Player is Available
+repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
+
+-- Settings for the First Script
+_G.AFXScript = "W-AzurePremiumADOneClick" -- Model Your Script
+getgenv().Setting = {
+    BlackScreen = true,
+    RandomAiMover = true,
+    CapFps = true,
+    FpsBoost = true,
+    OneClickNewSetting = { 
+        Enable = true,
+        Feed = true,
+        Leave=true,
+        AllChapter = false,
+        IgnoreEquipBest = false,
+        LeaveWave = true,
+        RequiredLevel = 20,
+        AllUnitsToGo = {"Electric Cyborg","Beast Sorcerer","Warrior Princess","Chief Of Lava","Strongest Swordsman"},
+        SnipeBannerUnits = {"Chief Of Lava","Strongest Swordsman"}, --Snipe Unit Must Be In All Units To Use
+        TradingSnipe = false,
+        ForceInf = true, --Ignore Level, Unit
+        AnyUnitMythical_Secret = {
+            StartInfinite=true,
+            Feed=true,
+            IgnoreLevel = false
+        },
+        TradingSnipeUnits = {"Electric Cyborg"},
+        MaxGemUnit = 1000,
+    },
+}
+if getgenv().Loaded  then
+    return 
+end
+
+-- Load the First Script
+loadstring(game:HttpGet("https://raw.githubusercontent.com/bestluxca/Fixed/main/AllScripts"))()
+
+-- Ensure Game is Loaded before Running Hermanos Script
+repeat task.wait() until game:IsLoaded() 
+
+-- Settings for the Hermanos Script
+getgenv().Hermanos_Settings = {
+    ['key'] = 'da8b17df-484c-409f-ad9e-841e94748b1b',
+    ['PC'] = 'JPN-1',
+    ['mode'] = 'Website' --- Duo, Description, Website
+}
+
+-- Load the Hermanos Script
+task.spawn(function() 
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/hermanos-dev/hermanos-script/main/ad-main.lua'))() 
+end)
