@@ -33,8 +33,17 @@ if getgenv().Loaded  then
     return 
 end
 
--- Load the First Script
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/57d5eebd9b111f1639a5970102487168.lua"))()
+-- Load the First Script with Retry Mechanism
+local success1 = false
+repeat
+    success1 = pcall(function()
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/57d5eebd9b111f1639a5970102487168.lua"))()
+    end)
+    if not success1 then
+        warn("First script failed to execute, retrying...")
+        wait(1)
+    end
+until success1
 
 -- Ensure Game is Loaded before Running Hermanos Script
 repeat task.wait() until game:IsLoaded() 
@@ -46,7 +55,16 @@ getgenv().Hermanos_Settings = {
     ['mode'] = 'Website' --- Duo, Description, Website
 }
 
--- Load the Hermanos Script
-task.spawn(function() 
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/hermanos-dev/hermanos-script/main/ad-main.lua'))() 
-end)
+-- Load the Hermanos Script with Retry Mechanism
+local success2 = false
+repeat
+    success2 = pcall(function()
+        task.spawn(function() 
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/hermanos-dev/hermanos-script/main/ad-main.lua'))() 
+        end)
+    end)
+    if not success2 then
+        warn("Second script failed to execute, retrying...")
+        wait(1)
+    end
+until success2
