@@ -2,7 +2,7 @@
 repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
 
 -- Settings for the First Script
-_G.AFXScript = "W-AzurePremiumADOneClick" -- Model Your Script
+script_key = "MmVbcWftmlMmXwJbTHRJHCPKCwrFcDNN"
 getgenv().Setting = {
     BlackScreen = true,
     RandomAiMover = true,
@@ -34,7 +34,7 @@ if getgenv().Loaded  then
 end
 
 -- Load the First Script
-loadstring(game:HttpGet("https://raw.githubusercontent.com/bestluxca/Fixed/main/AllScripts"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/57d5eebd9b111f1639a5970102487168.lua"))()
 
 -- Ensure Game is Loaded before Running Hermanos Script
 repeat task.wait() until game:IsLoaded() 
