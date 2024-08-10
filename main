@@ -1,70 +1,26 @@
--- Ensure Game is Loaded and Player is Available
-repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
-
 -- Settings for the First Script
-script_key = "MmVbcWftmlMmXwJbTHRJHCPKCwrFcDNN"
-getgenv().Setting = {
-    BlackScreen = true,
-    RandomAiMover = true,
-    CapFps = true,
-    FpsBoost = true,
-    OneClickNewSetting = { 
-        Enable = true,
-        Feed = true,
-        Leave=true,
-        AllChapter = false,
-        IgnoreEquipBest = false,
-        LeaveWave = true,
-        RequiredLevel = 20,
-        AllUnitsToGo = {"Electric Cyborg","Beast Sorcerer","Warrior Princess","Chief Of Lava","Strongest Swordsman"},
-        SnipeBannerUnits = {"Chief Of Lava","Strongest Swordsman"}, --Snipe Unit Must Be In All Units To Use
-        TradingSnipe = false,
-        ForceInf = true, --Ignore Level, Unit
-        AnyUnitMythical_Secret = {
-            StartInfinite=true,
-            Feed=true,
-            IgnoreLevel = false
-        },
-        TradingSnipeUnits = {"Electric Cyborg"},
-        MaxGemUnit = 1000,
+getgenv().Key = "18d2255f377911f770f36212"
+getgenv().TargetUnitRoll = {
+    "Admiral Of Lava"
+}
+getgenv().notRollUnitTarget = false
+getgenv().UseSavePosition = false
+getgenv().GemRollUnit = 2500
+getgenv()["Black Screen"] = true
+getgenv()["Auto Leave Infinite"] = {
+    ["Auto Leave"] = true,
+    ["Method"] = {
+        ["Sell"] = true,
+        ["Leave"] = false,
     },
+    ["Wave"] = 31
 }
-if getgenv().Loaded  then
-    return 
-end
-
--- Load the First Script with Retry Mechanism
-local success1 = false
-repeat
-    success1 = pcall(function()
-        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/57d5eebd9b111f1639a5970102487168.lua"))()
-    end)
-    if not success1 then
-        warn("First script failed to execute, retrying...")
-        wait(1)
-    end
-until success1
-
--- Ensure Game is Loaded before Running Hermanos Script
-repeat task.wait() until game:IsLoaded() 
-
--- Settings for the Hermanos Script
-getgenv().Hermanos_Settings = {
-    ['key'] = 'da8b17df-484c-409f-ad9e-841e94748b1b',
-    ['PC'] = 'JPN-1',
-    ['mode'] = 'Website' --- Duo, Description, Website
+getgenv().Webhook =  {
+    ["Webhook"] = true,
+    ["Url"] = "https://ptb.discord.com/api/webhooks/1249399352347332670/kc5DNYM9mvCqQ37ENmKx1OIcEcss1enE8rmg1cTqdLJ0eIABFXcrjz2tgyhOmVt78J2n",
+    ["Roll Unit"] = false,
+    ["Story/Infinite"] = true,
 }
 
--- Load the Hermanos Script with Retry Mechanism
-local success2 = false
-repeat
-    success2 = pcall(function()
-        task.spawn(function() 
-            loadstring(game:HttpGet('https://raw.githubusercontent.com/hermanos-dev/hermanos-script/main/ad-main.lua'))() 
-        end)
-    end)
-    if not success2 then
-        warn("Second script failed to execute, retrying...")
-        wait(1)
-    end
-until success2
+-- Load the First Script
+loadstring(game:HttpGet("https://raw.githubusercontent.com/obiiyeuem/vthangsitink/main/BananaCat-KaitunAD.lua"))()
