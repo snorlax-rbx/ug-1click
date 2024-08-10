@@ -17,7 +17,7 @@ getgenv()["Auto Leave Infinite"] = {
 }
 getgenv().Webhook =  {
     ["Webhook"] = true,
-    ["Url"] = "https://ptb.discord.com/api/webhooks/1249399352347332670/kc5DNYM9mvCqQ37ENmKx1OIcEcss1enE8rmg1cTqdLJ0eIABFXcrjz2tgyhOmVt78J2n",
+    ["Url"] = "https://ptb.discord.com/api/webhooks/1249540335248347136/bR-G5Qq05ybBrr0uVN1vZr79FJETkRZQNQIAmwkTg2Qzirjk8HV44iaOIfh3XnXjDyxN",
     ["Roll Unit"] = false,
     ["Story/Infinite"] = true,
 }
