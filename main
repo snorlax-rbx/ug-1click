@@ -1,26 +1,35 @@
 -- Settings for the First Script
-getgenv().Key = "18d2255f377911f770f36212"
-getgenv().TargetUnitRoll = {
-    "Admiral Of Lava"
-}
-getgenv().notRollUnitTarget = false
-getgenv().UseSavePosition = false
-getgenv().GemRollUnit = 2500
-getgenv()["Black Screen"] = true
-getgenv()["Auto Leave Infinite"] = {
-    ["Auto Leave"] = true,
-    ["Method"] = {
-        ["Sell"] = true,
-        ["Leave"] = false,
+script_key = "MmVbcWftmlMmXwJbTHRJHCPKCwrFcDNN"
+getgenv().Setting = {
+    BlackScreen = false,
+    RandomAiMover = false,
+    CapFps = true,
+    FpsBoost = true,
+    WebhookUrl = "https://ptb.discord.com/api/webhooks/1249540335248347136/bR-G5Qq05ybBrr0uVN1vZr79FJETkRZQNQIAmwkTg2Qzirjk8HV44iaOIfh3XnXjDyxN",
+    OneClickNewSetting = { 
+        Enable = true,
+        Feed = true,
+        Leave=true,
+        AllChapter = false,
+        IgnoreEquipBest = false,
+        LeaveWave = true,
+        RequiredLevel = 20,
+        AllUnitsToGo = {"Electric Cyborg","Beast Sorcerer","Warrior Princess","Chief Of Lava","Strongest Swordsman"},
+        SnipeBannerUnits = {"Chief Of Lava","Strongest Swordsman"}, --Snipe Unit Must Be In All Units To Use
+        TradingSnipe = false,
+        ForceInf = true, --Ignore Level, Unit
+        AnyUnitMythical_Secret = {
+            StartInfinite=true,
+            Feed=true,
+            IgnoreLevel = false
+        },
+        TradingSnipeUnits = {"Electric Cyborg"},
+        MaxGemUnit = 1000,
     },
-    ["Wave"] = 31
 }
-getgenv().Webhook =  {
-    ["Webhook"] = true,
-    ["Url"] = "https://ptb.discord.com/api/webhooks/1249540335248347136/bR-G5Qq05ybBrr0uVN1vZr79FJETkRZQNQIAmwkTg2Qzirjk8HV44iaOIfh3XnXjDyxN",
-    ["Roll Unit"] = false,
-    ["Story/Infinite"] = true,
-}
+if getgenv().Loaded  then
+    return 
+end
 
 -- Load the First Script
-loadstring(game:HttpGet("https://raw.githubusercontent.com/obiiyeuem/vthangsitink/main/BananaCat-KaitunAD.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/57d5eebd9b111f1639a5970102487168.lua"))()
