@@ -1,7 +1,7 @@
 -- Settings for the First Script
 script_key = "MmVbcWftmlMmXwJbTHRJHCPKCwrFcDNN"
 getgenv().Setting = {
-    BlackScreen = false,
+    BlackScreen = true,
     RandomAiMover = false,
     CapFps = true,
     FpsBoost = true,
