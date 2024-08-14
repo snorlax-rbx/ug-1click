@@ -1,35 +1,16 @@
--- Settings for the First Script
-script_key = "MmVbcWftmlMmXwJbTHRJHCPKCwrFcDNN"
-getgenv().Setting = {
-    BlackScreen = true,
-    RandomAiMover = false,
-    CapFps = true,
-    FpsBoost = true,
-    WebhookUrl = "https://ptb.discord.com/api/webhooks/1249540335248347136/bR-G5Qq05ybBrr0uVN1vZr79FJETkRZQNQIAmwkTg2Qzirjk8HV44iaOIfh3XnXjDyxN",
-    OneClickNewSetting = { 
-        Enable = true,
-        Feed = true,
-        Leave=true,
-        AllChapter = false,
-        IgnoreEquipBest = false,
-        LeaveWave = true,
-        RequiredLevel = 20,
-        AllUnitsToGo = {"Electric Cyborg","Beast Sorcerer","Warrior Princess","Chief Of Lava","Strongest Swordsman"},
-        SnipeBannerUnits = {"Chief Of Lava","Strongest Swordsman"}, --Snipe Unit Must Be In All Units To Use
-        TradingSnipe = false,
-        ForceInf = true, --Ignore Level, Unit
-        AnyUnitMythical_Secret = {
-            StartInfinite=true,
-            Feed=true,
-            IgnoreLevel = false
-        },
-        TradingSnipeUnits = {"Electric Cyborg"},
-        MaxGemUnit = 1000,
-    },
+_G.Script = "MaruHub"
+repeat task.wait() until game:IsLoaded()
+getgenv().Script_Mode = "Kaitun_Script"
+wait(5) -- Put this for make sure script will execute
+_G.Webhook  = {['WebhookLink'] = 'https://ptb.discord.com/api/webhooks/1249540335248347136/bR-G5Qq05ybBrr0uVN1vZr79FJETkRZQNQIAmwkTg2Qzirjk8HV44iaOIfh3XnXjDyxN', ['SendWebhookReward'] = true} -- Notify when end match
+_G.SettingsAD = {
+    ["LeaveAtWave"] = 31,
+    ["DelayStartLobby"] = 5,
+    ["MethodLeave"] = "Sell", -- Sell, Leave,
+    ["ReplayInStoryMode"] = false, -- Use when u want to play only story mode ( next time will go to next chapter too when disconnect )
+    ["BlackScreen"] = true
 }
-if getgenv().Loaded  then
-    return 
-end
+script_key = "YlfaOvAUdUrYniWhzkIcxRJvXuYuWMaw";
 
 -- Load the First Script
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/57d5eebd9b111f1639a5970102487168.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a9caf93deb9ce55f7d5cf3a6ab91dfd8.lua"))()
