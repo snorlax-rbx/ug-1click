@@ -1,6 +1,77 @@
-getgenv().Key = "MARU-WBBSW-ZWBL0-6F8N-I80D5-RYFH"
-getgenv().id = "1003662302412820622"
-getgenv().Script_Mode = "Kaitun_Script"
+--Update Latest 08/16/2024 07:27:40
+getgenv().Configs = {
 
+	-- [Kaitun]
+	["Automatic Kaitun"] = true,
+	["Kaitun UI"] = true,
+	["Hidden UI"] = false,
+
+	-- [Automatic Join]
+	["Select Difficulty"] = "Normal",--{"Normal","Hard"}
+	["Select Map"] = "FooshaVillage",
+	["Chapter Select"] = "Infinite", -- "Latest","Chapter1","Chapter2","Chapter3","Chapter4","Chapter5","Chapter6","Infinite"
+	["StartDelays"] = 1.0, -- 0.1-5.0
+	["Friends Only"] = true,
+	["Automatic Join"] = true,
+
+	-- [Challenge]
+
+	["Automatic Challenge"] = false,
+	["Ignore Challenge"] = {},
+	["Ignore Map"] = {},
+
+	-- [Raids]
+	["Automatic Raids"] = false,
+	["Select Raids"] = "Raid1",
+
+	-- [Match Configs]
+	["Automatic Playing"] = true,
+	["Automatic Leave"] = true,
+	["Automatic Replay"] = false,
+	["Automatic Next"] = false,
+	["Automatic Skip Waves"] = true,
+	["Automatic Using Buff"] = true,
+
+	["Sell Units On Wave"] = true, 
+	["Select Wave"] = 31,
+
+	-- [Unit Rolls]
+	["Automatic Rolls"] = false,
+	["Rolls Mode"] = "1", -- 1,10
+	["Send Webhook Rools"] = false,
+	["Raritys Webhook"] = false,
+
+	-- [Unit Sell]
+	["Automatic Sell Raritys"] = false,
+	["Ignore Shiny"] = false,
+	["Sell Raritys"] = {"Rare","Epic"}, -- "Rare","Epic","Legendary","Mythic","Secret","Exclusive"
+
+	-- [Unit Feed]
+	["Automatic Feed"] = false,
+	["Unit Feed Select"] = "",
+	["Food Select"] = {""},
+
+	-- [Macro]
+	["Play Macro"] = false,
+	["Delays Next Step"] = 0.5, --0.5-1.0
+
+	-- [Miscellaneous]
+	["Hidden Name"] = false,
+	["Automatic Claim Quest"] = true,
+
+	-- [Performance]
+	["Hidden Enemies"] = true,
+	["Disabled Damage Indicators"] = true,
+	["Disabled Skill Effect"] = true,
+	["Delete Map"] = true,
+	["Render White Screen"] = true,
+	["Frame Rate Lock"] = false,
+	["Frame Rate Select"] = 30, -- Lock FPS
+	["Boost Performance"] = true,
+	["Automatic Reconnect"] = true,
+
+}
 -- Load the First Script
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xshiba/MaruBitkub/main/Mobile.lua"))()
+script_key = "DTfeSvjctkLODJMPWGLkjQIIJikgTiSV";
+_G.Script = "XovaHub"
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/9f198b3d8294454213de636e89d844df.lua"))()
